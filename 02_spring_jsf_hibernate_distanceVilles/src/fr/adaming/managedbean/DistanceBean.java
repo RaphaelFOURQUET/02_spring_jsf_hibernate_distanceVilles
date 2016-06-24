@@ -6,6 +6,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import fr.adaming.service.CityDistanceService;
 
 /**
@@ -13,7 +16,8 @@ import fr.adaming.service.CityDistanceService;
  * @author INTI-0332
  *
  */
-@ManagedBean(name="distanceBean")
+@Component("distanceBean")
+//@ManagedBean(name="distanceBean")
 @SessionScoped
 public class DistanceBean implements Serializable {
 
@@ -23,7 +27,8 @@ public class DistanceBean implements Serializable {
 	private String desCity;
 	private double distance;
 	
-	@ManagedProperty(value="#{cityDistanceServiceBean}")
+	//@ManagedProperty(value="#{cityDistanceServiceBean}")
+	@Autowired
 	private CityDistanceService cityDistanceService;
 	
 	public DistanceBean() {

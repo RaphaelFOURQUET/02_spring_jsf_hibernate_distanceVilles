@@ -33,7 +33,7 @@ public class CityDistanceDao {
 		Session session = sessionFactory.openSession();
 		
 		//par HQL
-		String req = "From cityDistance c";
+		String req = "From CityDistance";
 
 		Query request = session.createQuery(req);
 
