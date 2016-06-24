@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+    <html lang="fr"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
+        <h:head>
+            <title>Distance</title>
+        </h:head>
+        <body>
+        	<h:form>
+        		
+        		<h:panelGrid columns="2" border="1" width="50%">
+        			
+        			<f:facet name="header">
+        				<h:outputText value="Rechercher Distance"/>
+        			</f:facet>
+        			
+        			<h:panelGroup>
+        				<h:outputLabel for="srcCity" value="Ville de depart"/>
+        				<h:inputText id="srcCity" value="#{distanceBean.srcCity}"/>
+        			</h:panelGroup>
+        			
+        			<h:panelGroup>
+        				<h:outputLabel for="desCity" value="Ville d arrivee"/>
+        				<h:inputText id="desCity" value="#{distanceBean.desCity}"/>
+        			</h:panelGroup>
+        			
+        			<h:panelGroup>
+        				<h:outputLabel value="Distance : "/>
+        			</h:panelGroup>
+        			
+        			<h:panelGroup>
+        				<h:outputText value="#{distanceBean.distance}" />
+        			</h:panelGroup>
+        			
+        			<f:facet name="footer">
+        				<h:panelGroup>
+        					<h:commandButton action="#{distanceBean.chercherDistance}" value="Search"/>
+        				</h:panelGroup>
+        			</f:facet>
+        			
+        			
+        			
+        		</h:panelGrid>
+        		
+        	</h:form>
+            
+        </body>
+    </html>
